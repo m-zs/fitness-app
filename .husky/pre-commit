@@ -1,0 +1,2 @@
+nx affected -t test --parallel=5
+nx affected -t lint format --parallel=5
