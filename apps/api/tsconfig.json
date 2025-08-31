@@ -4,6 +4,12 @@
   "include": [],
   "references": [
     {
+      "path": "../../libs/utils"
+    },
+    {
+      "path": "../../libs/users"
+    },
+    {
       "path": "../../libs/app-models"
     },
     {

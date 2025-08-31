@@ -1,6 +1,7 @@
 import { Module } from '@nestjs/common';
 import { ConfigModule } from '@nestjs/config';
-import { PrismaService } from '@fitness-app/app-models';
+import { FitnessAppAppModelsModule } from '@fitness-app/app-models';
+import { UsersModule } from '@fitness-app/users';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 
@@ -9,8 +10,10 @@ import { AppService } from './app.service';
     ConfigModule.forRoot({
       isGlobal: true,
     }),
+    FitnessAppAppModelsModule,
+    UsersModule,
   ],
   controllers: [AppController],
-  providers: [AppService, PrismaService],
+  providers: [AppService],
 })
 export class AppModule {}

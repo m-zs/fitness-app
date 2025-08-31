@@ -1,26 +1,28 @@
 import { Injectable } from '@nestjs/common';
-import { CreateUserDto } from './dto/create-user.dto';
-import { UpdateUserDto } from './dto/update-user.dto';
+import {
+  ACTION_FAILURE_REASON,
+  actionResult,
+  ActionResult,
+} from '@fitness-app/utils';
+import { UsersRepository } from './users.repository';
+import { UserDto } from './dto/user.dto';
 
 @Injectable()
 export class UsersService {
-  create(createUserDto: CreateUserDto) {
-    return 'This action adds a new user';
-  }
+  constructor(private readonly usersRepository: UsersRepository) {}
 
-  findAll() {
-    return `This action returns all users`;
-  }
+  async findOne(id: string): Promise<ActionResult<UserDto>> {
+    const user = await this.usersRepository.findOne(id, {
+      id: true,
+      email: true,
+      firstName: true,
+      lastName: true,
+    });
 
-  findOne(id: number) {
-    return `This action returns a #${id} user`;
-  }
+    if (!user) {
+      return actionResult.error(ACTION_FAILURE_REASON.USER_NOT_FOUND);
+    }
 
-  update(id: number, updateUserDto: UpdateUserDto) {
-    return `This action updates a #${id} user`;
-  }
-
-  remove(id: number) {
-    return `This action removes a #${id} user`;
+    return actionResult.ok(user);
   }
 }

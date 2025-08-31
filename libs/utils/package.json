@@ -1,5 +1,5 @@
 {
-  "name": "@fitness-app/users",
+  "name": "@fitness-app/utils",
   "version": "0.0.1",
   "private": true,
   "main": "./src/index.ts",
@@ -12,11 +12,17 @@
     },
     "./package.json": "./package.json"
   },
-  "dependencies": {},
+  "dependencies": {
+    "tslib": "^2.3.0",
+    "@nestjs/common": "^11.0.0",
+    "@nestjs/swagger": "^11.2.0"
+  },
   "nx": {
-    "test": {
-      "options": {
-        "passWithNoTests": true
+    "targets": {
+      "test": {
+        "options": {
+          "passWithNoTests": true
+        }
       }
     }
   }

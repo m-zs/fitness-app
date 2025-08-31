@@ -22,6 +22,12 @@
   ],
   "references": [
     {
+      "path": "../../libs/utils/tsconfig.lib.json"
+    },
+    {
+      "path": "../../libs/users/tsconfig.lib.json"
+    },
+    {
       "path": "../../libs/app-models/tsconfig.lib.json"
     }
   ]
