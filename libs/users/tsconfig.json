@@ -4,16 +4,13 @@
   "include": [],
   "references": [
     {
-      "path": "../../libs/utils"
+      "path": "../utils"
     },
     {
-      "path": "../../libs/users"
+      "path": "../app-models"
     },
     {
-      "path": "../../libs/app-models"
-    },
-    {
-      "path": "./tsconfig.app.json"
+      "path": "./tsconfig.lib.json"
     },
     {
       "path": "./tsconfig.spec.json"

@@ -15,7 +15,6 @@
     ],
     "sharedGlobals": ["{workspaceRoot}/.github/workflows/ci.yml"]
   },
-  "nxCloudId": "68acaf46d135bc0fbf72bd0a",
   "plugins": [
     {
       "plugin": "@nx/js/typescript",
@@ -30,7 +29,7 @@
           "watchDepsName": "watch-deps"
         }
       },
-      "exclude": ["libs/app-models/*"]
+      "exclude": ["libs/app-models/*", "libs/users/*"]
     },
     {
       "plugin": "@nx/webpack/plugin",
@@ -58,7 +57,7 @@
     },
     {
       "plugin": "@nx/js/typescript",
-      "include": ["libs/app-models/*"],
+      "include": ["libs/app-models/*", "libs/users/*"],
       "options": {
         "typecheck": {
           "targetName": "typecheck"
@@ -72,9 +71,6 @@
   "targetDefaults": {
     "test": {
       "dependsOn": ["^build"]
-    },
-    "options": {
-      "passWithNoTests": true
     }
   }
 }

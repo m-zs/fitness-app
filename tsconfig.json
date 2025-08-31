@@ -11,6 +11,12 @@
     },
     {
       "path": "./libs/app-models"
+    },
+    {
+      "path": "./libs/users"
+    },
+    {
+      "path": "./libs/utils"
     }
   ]
 }
