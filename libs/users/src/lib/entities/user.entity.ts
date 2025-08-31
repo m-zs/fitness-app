@@ -1,3 +1,4 @@
+import { Exclude } from 'class-transformer';
 import { ApiProperty } from '@nestjs/swagger';
 import { AppRole, User, UserStatus } from '@fitness-app/app-models';
 
